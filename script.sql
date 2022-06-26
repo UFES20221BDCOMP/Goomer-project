@@ -5,7 +5,7 @@
 -- Dumped from database version 14.3
 -- Dumped by pg_dump version 14.3
 
--- Started on 2022-06-25 07:35:54
+-- Started on 2022-06-26 04:57:36
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -186,7 +186,7 @@ CREATE SEQUENCE public.category_prod_cat_id_seq
 ALTER TABLE public.category_prod_cat_id_seq OWNER TO "Abe";
 
 --
--- TOC entry 3374 (class 0 OID 0)
+-- TOC entry 3385 (class 0 OID 0)
 -- Dependencies: 213
 -- Name: category_prod_cat_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: Abe
 --
@@ -227,7 +227,7 @@ CREATE SEQUENCE public.opening_hours_op_id_seq
 ALTER TABLE public.opening_hours_op_id_seq OWNER TO "Abe";
 
 --
--- TOC entry 3375 (class 0 OID 0)
+-- TOC entry 3386 (class 0 OID 0)
 -- Dependencies: 219
 -- Name: opening_hours_op_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: Abe
 --
@@ -269,7 +269,7 @@ CREATE SEQUENCE public.product_prod_id_seq
 ALTER TABLE public.product_prod_id_seq OWNER TO "Abe";
 
 --
--- TOC entry 3376 (class 0 OID 0)
+-- TOC entry 3387 (class 0 OID 0)
 -- Dependencies: 211
 -- Name: product_prod_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: Abe
 --
@@ -324,7 +324,7 @@ CREATE SEQUENCE public.promo_time_proti_id_seq
 ALTER TABLE public.promo_time_proti_id_seq OWNER TO "Abe";
 
 --
--- TOC entry 3377 (class 0 OID 0)
+-- TOC entry 3388 (class 0 OID 0)
 -- Dependencies: 217
 -- Name: promo_time_proti_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: Abe
 --
@@ -364,7 +364,7 @@ CREATE SEQUENCE public.restaurant_rest_id_seq
 ALTER TABLE public.restaurant_rest_id_seq OWNER TO "Abe";
 
 --
--- TOC entry 3378 (class 0 OID 0)
+-- TOC entry 3389 (class 0 OID 0)
 -- Dependencies: 209
 -- Name: restaurant_rest_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: Abe
 --
@@ -410,6 +410,163 @@ ALTER TABLE ONLY public.promo_time ALTER COLUMN proti_id SET DEFAULT nextval('pu
 --
 
 ALTER TABLE ONLY public.restaurant ALTER COLUMN rest_id SET DEFAULT nextval('public.restaurant_rest_id_seq'::regclass);
+
+
+--
+-- TOC entry 3374 (class 0 OID 24665)
+-- Dependencies: 214
+-- Data for Name: category_prod; Type: TABLE DATA; Schema: public; Owner: Abe
+--
+
+INSERT INTO public.category_prod VALUES (1, 'Bebidas');
+INSERT INTO public.category_prod VALUES (2, 'Lanches');
+INSERT INTO public.category_prod VALUES (3, 'Acompanhamentos');
+INSERT INTO public.category_prod VALUES (4, 'Sobremesa');
+INSERT INTO public.category_prod VALUES (5, 'Pizza');
+INSERT INTO public.category_prod VALUES (6, 'Vegetariano');
+INSERT INTO public.category_prod VALUES (7, 'Vegano');
+INSERT INTO public.category_prod VALUES (8, 'Massas');
+INSERT INTO public.category_prod VALUES (9, 'Sorvete');
+INSERT INTO public.category_prod VALUES (10, 'Almoco/Janta');
+
+
+--
+-- TOC entry 3375 (class 0 OID 24684)
+-- Dependencies: 215
+-- Data for Name: opening_hours; Type: TABLE DATA; Schema: public; Owner: Abe
+--
+
+INSERT INTO public.opening_hours VALUES (1, '09:00:00', '18:00:00', 'Segunda', 1);
+INSERT INTO public.opening_hours VALUES (1, '09:00:00', '18:00:00', 'Terça', 2);
+INSERT INTO public.opening_hours VALUES (1, '09:00:00', '18:00:00', 'Quarta', 3);
+INSERT INTO public.opening_hours VALUES (1, '10:00:00', '18:00:00', 'Quinta', 5);
+INSERT INTO public.opening_hours VALUES (1, '10:00:00', '18:00:00', 'Sexta', 6);
+INSERT INTO public.opening_hours VALUES (2, '08:00:00', '16:00:00', 'Segunda', 7);
+INSERT INTO public.opening_hours VALUES (2, '08:00:00', '16:00:00', 'Terça', 8);
+INSERT INTO public.opening_hours VALUES (2, '08:00:00', '16:00:00', 'Quarta', 9);
+INSERT INTO public.opening_hours VALUES (2, '08:00:00', '16:00:00', 'Quinta', 10);
+INSERT INTO public.opening_hours VALUES (2, '08:00:00', '16:00:00', 'Sexta', 11);
+INSERT INTO public.opening_hours VALUES (3, '15:00:00', '21:00:00', 'Segunda', 12);
+INSERT INTO public.opening_hours VALUES (3, '15:00:00', '21:00:00', 'Terça', 13);
+INSERT INTO public.opening_hours VALUES (3, '15:00:00', '21:00:00', 'Quarta', 14);
+INSERT INTO public.opening_hours VALUES (3, '15:00:00', '21:00:00', 'Quinta', 15);
+INSERT INTO public.opening_hours VALUES (3, '15:00:00', '21:00:00', 'Sexta', 16);
+INSERT INTO public.opening_hours VALUES (4, '09:00:00', '21:00:00', 'Segunda', 17);
+INSERT INTO public.opening_hours VALUES (4, '09:00:00', '21:00:00', 'Terça', 18);
+INSERT INTO public.opening_hours VALUES (4, '09:00:00', '21:00:00', 'Quarta', 19);
+INSERT INTO public.opening_hours VALUES (4, '09:00:00', '21:00:00', 'Quinta', 20);
+INSERT INTO public.opening_hours VALUES (4, '09:00:00', '21:00:00', 'Sexta', 21);
+
+
+--
+-- TOC entry 3372 (class 0 OID 24646)
+-- Dependencies: 212
+-- Data for Name: product; Type: TABLE DATA; Schema: public; Owner: Abe
+--
+
+INSERT INTO public.product VALUES (1, 1, 'Duplo Cheddar', 15.90, NULL, 2);
+INSERT INTO public.product VALUES (2, 1, 'Duplo Rodeio', 15.90, NULL, 2);
+INSERT INTO public.product VALUES (3, 3, 'Refrigerante Lata', 6.90, NULL, 1);
+INSERT INTO public.product VALUES (4, 7, 'Suco ', 14.90, NULL, 1);
+INSERT INTO public.product VALUES (5, 7, 'Batata Frita', 26.50, NULL, 2);
+INSERT INTO public.product VALUES (6, 5, 'Pizza Média', 35.90, NULL, 5);
+INSERT INTO public.product VALUES (7, 5, 'Pizza Grande', 45.90, NULL, 5);
+INSERT INTO public.product VALUES (8, 6, 'Sorvete Casquinha', 4.00, NULL, 9);
+INSERT INTO public.product VALUES (9, 8, 'Milk Shake', 8.00, NULL, 9);
+INSERT INTO public.product VALUES (10, 7, 'Refrigerante Lata', 10.90, NULL, 1);
+INSERT INTO public.product VALUES (11, 1, 'Refrigerante Lata', 11.90, NULL, 1);
+INSERT INTO public.product VALUES (12, 4, 'Refrigerante 1L', 16.90, NULL, 1);
+INSERT INTO public.product VALUES (13, 5, 'Refrigerante 1L', 14.50, NULL, 1);
+INSERT INTO public.product VALUES (14, 1, 'Duplo Cheeseburger', 15.90, NULL, 2);
+INSERT INTO public.product VALUES (15, 2, 'Sanduiche 15cm', 15.90, NULL, 2);
+INSERT INTO public.product VALUES (16, 2, 'Sanduiche 30cm', 21.90, NULL, 2);
+INSERT INTO public.product VALUES (17, 2, 'Refrigerante Lata', 7.60, NULL, 1);
+INSERT INTO public.product VALUES (18, 4, 'Marmita Pequena', 10.90, NULL, 10);
+INSERT INTO public.product VALUES (19, 4, 'Marmita Grande', 16.90, NULL, 10);
+INSERT INTO public.product VALUES (20, 4, 'Prato Feito 250g', 13.75, NULL, 10);
+INSERT INTO public.product VALUES (22, 5, 'Pizza Doce', 49.90, NULL, 5);
+
+
+--
+-- TOC entry 3376 (class 0 OID 24743)
+-- Dependencies: 216
+-- Data for Name: promo_product; Type: TABLE DATA; Schema: public; Owner: Abe
+--
+
+INSERT INTO public.promo_product VALUES (2, 'Duplo Rodeio com desconto imperdivel!', 13.50);
+
+
+--
+-- TOC entry 3378 (class 0 OID 24764)
+-- Dependencies: 218
+-- Data for Name: promo_time; Type: TABLE DATA; Schema: public; Owner: Abe
+--
+
+INSERT INTO public.promo_time VALUES (11, 2, '10:00:00', '20:00:00', 'Segunda');
+INSERT INTO public.promo_time VALUES (14, 2, '10:00:00', '20:00:00', 'Terça');
+INSERT INTO public.promo_time VALUES (16, 2, '10:00:00', '20:00:00', 'Quarta');
+
+
+--
+-- TOC entry 3370 (class 0 OID 24635)
+-- Dependencies: 210
+-- Data for Name: restaurant; Type: TABLE DATA; Schema: public; Owner: Abe
+--
+
+INSERT INTO public.restaurant VALUES (1, 'Burger King ', 'Av. Nossa Senhora da Penha, 2534', NULL);
+INSERT INTO public.restaurant VALUES (2, 'Subway Ufes', 'R. Darcy Grijó, 50', NULL);
+INSERT INTO public.restaurant VALUES (3, 'Rock Burger ', 'R. Silvino Grecco, 800', NULL);
+INSERT INTO public.restaurant VALUES (5, 'Pizza Hut', 'Av. Américo Buaiz, 200', NULL);
+INSERT INTO public.restaurant VALUES (6, 'Chiquinho Sorvetes', 'R. João da Cruz, 340', NULL);
+INSERT INTO public.restaurant VALUES (8, 'Chiquinho Sorvetes', 'Av. Anisio Fernandes Coelho, 1715', NULL);
+INSERT INTO public.restaurant VALUES (7, 'Burger King ', 'Av. Américo Buaiz, 200', NULL);
+INSERT INTO public.restaurant VALUES (4, 'Paladar de Mel', 'Santa Tereza, 321', NULL);
+INSERT INTO public.restaurant VALUES (9, 'teste', 'rua teste', NULL);
+
+
+--
+-- TOC entry 3390 (class 0 OID 0)
+-- Dependencies: 213
+-- Name: category_prod_cat_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Abe
+--
+
+SELECT pg_catalog.setval('public.category_prod_cat_id_seq', 11, true);
+
+
+--
+-- TOC entry 3391 (class 0 OID 0)
+-- Dependencies: 219
+-- Name: opening_hours_op_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Abe
+--
+
+SELECT pg_catalog.setval('public.opening_hours_op_id_seq', 22, true);
+
+
+--
+-- TOC entry 3392 (class 0 OID 0)
+-- Dependencies: 211
+-- Name: product_prod_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Abe
+--
+
+SELECT pg_catalog.setval('public.product_prod_id_seq', 24, true);
+
+
+--
+-- TOC entry 3393 (class 0 OID 0)
+-- Dependencies: 217
+-- Name: promo_time_proti_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Abe
+--
+
+SELECT pg_catalog.setval('public.promo_time_proti_id_seq', 19, true);
+
+
+--
+-- TOC entry 3394 (class 0 OID 0)
+-- Dependencies: 209
+-- Name: restaurant_rest_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Abe
+--
+
+SELECT pg_catalog.setval('public.restaurant_rest_id_seq', 10, true);
 
 
 --
@@ -595,7 +752,7 @@ ALTER TABLE ONLY public.opening_hours
     ADD CONSTRAINT rest_id_fk FOREIGN KEY (rest_id) REFERENCES public.restaurant(rest_id) ON DELETE CASCADE NOT VALID;
 
 
--- Completed on 2022-06-25 07:35:56
+-- Completed on 2022-06-26 04:57:41
 
 --
 -- PostgreSQL database dump complete
