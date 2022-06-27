@@ -9,6 +9,8 @@
 
     Funções: assim como as triggers possui uma sintaxe bastante especifica e contém com inumeras funções prontas
 
+    Acertar a configuração de dois cotainers, foi extremamente dificil ao ponto de precsicar nao dormir, revirei muitos e muitos sites, mas na proxima vez ja sei oq fazer kskdakk, uma experiencia muito marcante xD
+
 # Tecnologias Utilizadas
 
     node.js, express, postgres
@@ -28,4 +30,6 @@
     Deletar um restaurante faz com que seus produtos e todas as referencias a eles também se apaguem, assim como a opening_hours
 
     Deletar uma promoção faz com que as datas da promoção também se apaguem
+
+    
 

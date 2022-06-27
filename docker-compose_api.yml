@@ -1,0 +1,10 @@
+version: "3.7"
+services:
+  web:
+    image: abraaoabe/dockernode
+    environment:
+      DB_PASSWORD: postgres
+      DB_USER: postgres
+    ports:
+      - "4000:4000"
+      - "3000:3000"
