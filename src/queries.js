@@ -1,5 +1,6 @@
 //BANCO LOCAL USANDO PGADMIN
 
+/*
 const Pool = require('pg').Pool
 const pool = new Pool({
     user: 'Abe',
@@ -8,6 +9,15 @@ const pool = new Pool({
     password: 'password',
     port: 5432,
 })
+*/
+const Pool = require('pg').Pool
+const pool = new Pool({
+    user: 'postgres',
+    host: 'db',
+    database: 'api_goomer',
+    password: 'postgres',
+    port: 5432,
+});
 
 
 pool.connect(err => {

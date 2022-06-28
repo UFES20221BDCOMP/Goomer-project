@@ -40,7 +40,6 @@ const client = new Client({
 //?Get all restaurants
 app.get('/restaurants', database.get_restaurants)
 
-
 //?Get a restaurant by id
 app.get('/restaurants/:id', database.get_restaurants_byid)
 

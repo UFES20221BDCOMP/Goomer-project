@@ -1,27 +1,44 @@
 # Iniciando
 
-Para executar subir os 2 containers você deve executar o arquivo run.sh com o comando 
+Inicialmente você deve ter instalado o docker e o docker-compose caso ainda não tenha em sua maquina
+
+Para subir os 2 containers você deve executar os comandos a seguir na pasta que esta localizada o Dockerfile
     
-    ./run.sh
+    docker build -t abraaoabe/dockernode .
+    docker-compose -f docker-compose.yml up
+    docker-compose -f docker-compose_api.yml up
 
-Após o final da composição teste a API com o comando
+Lembre-se de esperar o banco de dados subir (segundo comando terminar) antes de dar o terceiro comando
 
-    ./test.sh
 
-Você também pode acessar a aplicação pelo navegador colocando alguma dessas urls
+Você pode testar a aplicação pelo navegador colocando algumas dessas urls (lembre-se de deixar a porta 3000 livre)
 
     http://localhost:3000/restaurants
     http://localhost:3000/products
     http://localhost:3000/categorys
 
-Ou caso queira restar um ID especifico utilize
+Ou caso queira testar um ID especifico utilize
 
     http://localhost:3000/restaurants/ID
     http://localhost:3000/products/ID
     http://localhost:3000/categorys/ID
 
-Substitua o ID por um id valido
+teste também
 
+   http://localhost:3000/restaurants_products/
+   http://localhost:3000/opening/ID
+   http://localhost:3000/categorys_products/ID
+
+Substitua o ID por um id valido no banco de dados
+
+# testes unitarios
+Para fazer o teste unitario modifique a linha 12 no dockerfile para 
+    
+    CMD ["npm", "test"]
+
+E refazer os comandos de build e composição da api (lembre-se de matar seus containers)
+
+serão feitos testes de GET/POST/PUT/DELETE automatizados, alguns deles terão o retorno impresso na tela
 # Considerações 
 
 foi feito uma modificação para execução de dois dockers_compose, pois ao tentar subir o banco e a aplicação juntos, a aplicação subia primeiro e tentava a conexão porém o banco ainda não estava pronto e gerava um erro, pode ser resolvido com o uso de alguma ORM e funções assincronas para atrasar ou tentar novamente a conexão.
