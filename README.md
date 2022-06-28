@@ -73,6 +73,8 @@ foi feito uma modificação para execução de dois dockers_compose, pois ao ten
 
 - Deletar uma promoção faz com que as datas da promoção também se apaguem
 
+![alt text](img/img.png)
+
 # Estrutura dos containers 
 
 São dois containers, o container 1 executa o banco de dados e o container 2 executa a aplicação na qual temos a comunicação, a aplicação então se comunica com o banco de dados e é assim que temos nossa API
