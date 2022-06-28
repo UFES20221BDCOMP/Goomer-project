@@ -24,6 +24,7 @@ Ou caso queira testar um ID especifico utilize
     http://localhost:3000/categorys/ID
 
 teste também
+
     http://localhost:3000/restaurants_products/
     http://localhost:3000/opening/ID
     http://localhost:3000/categorys_products/ID
