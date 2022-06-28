@@ -73,6 +73,7 @@ foi feito uma modificação para execução de dois dockers_compose, pois ao ten
 
 - Deletar uma promoção faz com que as datas da promoção também se apaguem
 
+# Ajudando a entender a estrutura do banco
 ![alt text](img/banco.png)
 
 # Estrutura dos containers 
