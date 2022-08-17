@@ -1,14 +1,16 @@
 # Iniciando
 
-Inicialmente você deve ter instalado o docker e o docker-compose caso ainda não tenha em sua maquina
+Inicialmente você deve ter instalado o docker versão 20.16.16 e o docker-compose v2.6.0 caso ainda não tenha em sua maquina
 
-Para subir os 2 containers você deve executar os comandos a seguir na pasta que esta localizada o Dockerfile
+Para subir os 2 containers você deve executar os comandos a seguir na pasta que esta localizada o Dockerfile (Tente executar com a flag -d nos comandos, caso queira manter o uso do seu terminal)
     
     docker build -t abraaoabe/dockernode .
     docker-compose -f docker-compose.yml up
     docker-compose -f docker-compose_api.yml up
 
 Lembre-se de esperar o banco de dados subir (segundo comando terminar) antes de dar o terceiro comando
+Pois caso tente subir o container da API antes do container do Banco estiver up, vai gerar erro ao tentar a conexão
+Então aguarde até todo o banco estar carregado e up
 
 
 Você pode testar a aplicação pelo navegador colocando algumas dessas urls (lembre-se de deixar a porta 3000 livre)
